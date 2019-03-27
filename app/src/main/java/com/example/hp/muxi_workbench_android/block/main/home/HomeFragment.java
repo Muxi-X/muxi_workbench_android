@@ -12,25 +12,36 @@ import android.widget.ViewFlipper;
 
 import com.example.hp.muxi_workbench_android.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class HomeFragment extends Fragment {
 
     private ViewFlipper viewFlipper;
-    private String[] messageArray = {"祝1生日快乐","祝2生日快乐"};
+    private List<String> messageArray;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+        messageArray = new ArrayList<String>();
+        initData();
         viewFlipper = root.findViewById(R.id.view_flipper);
         initViewFlipper(root);
         return root;
     }
 
+    private void initData() {
+        messageArray.add("1");
+        messageArray.add("  2");
+        messageArray.add("    3");
+    }
+
     private void initViewFlipper(View root) {
-        for (String aMessageArray : messageArray) {
+        for (int i = 0; i < messageArray.size(); i++) {
             TextView textView = (TextView) View.inflate(getContext(), R.layout.message_text, null);
-            textView.setText(aMessageArray);
+            textView.setText(messageArray.get(i));
             viewFlipper.addView(textView);
         }
         viewFlipper.startFlipping();
