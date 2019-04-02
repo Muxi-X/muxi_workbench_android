@@ -90,9 +90,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.home:viewPager.setCurrentItem(0);break;
             case R.id.schedule:viewPager.setCurrentItem(1);break;
-            case R.id.project:viewPager.setCurrentItem(1);break;
-            case R.id.message:viewPager.setCurrentItem(1);break;
-            case R.id.mine:viewPager.setCurrentItem(1);break;
+            case R.id.project:viewPager.setCurrentItem(2);break;
+            case R.id.message:viewPager.setCurrentItem(3);break;
+            case R.id.mine:viewPager.setCurrentItem(4);break;
         }
     }
 }

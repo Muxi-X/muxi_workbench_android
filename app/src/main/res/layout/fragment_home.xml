@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <ViewFlipper
         android:id="@+id/view_flipper"
@@ -10,7 +11,16 @@
         android:layout_height="50dp"
         android:inAnimation="@anim/slide_in_bottom"
         android:outAnimation="@anim/slide_out_top"
-        android:flipInterval="3000">
-
+        android:flipInterval="3000"
+        android:autoStart="true">
     </ViewFlipper>
-</FrameLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/home_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:clipChildren="false">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>
