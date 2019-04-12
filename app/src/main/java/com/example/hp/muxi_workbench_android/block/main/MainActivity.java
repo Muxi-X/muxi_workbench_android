@@ -1,13 +1,13 @@
 package com.example.hp.muxi_workbench_android.block.main;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hp.muxi_workbench_android.R;
 import com.example.hp.muxi_workbench_android.block.main.home.HomeFragment;
@@ -18,6 +18,8 @@ import com.example.hp.muxi_workbench_android.block.main.schedule.ScheduleFragmen
 
 import java.util.ArrayList;
 
+import androidx.lifecycle.ViewModelProviders;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private ViewPager viewPager;
     private ImageView home;
@@ -25,15 +27,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView project;
     private ImageView message;
     private ImageView mine;
-
     private ArrayList<Fragment> fragments = new ArrayList<>();
     private FragmentPagerAdapter pagerAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initView();
         initViewPage();
     }
