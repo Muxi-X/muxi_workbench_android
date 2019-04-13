@@ -14,6 +14,7 @@
         android:id="@+id/project_image"/>
 
     <TextView
+        android:id="@+id/project_name"
         android:layout_width="100dp"
         android:layout_height="16dp"
         android:text="项目名称"

@@ -8,12 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.hp.muxi_workbench_android.R;
+
+import java.util.Objects;
+
 import androidx.lifecycle.ViewModelProviders;
 
 public class ProjectFragment extends Fragment {
 
     private ProjectViewModel model;
-
+    private ProjectRecycleAdapter recycleAdapter;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +27,16 @@ public class ProjectFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        View view=inflater.inflate(R.layout.fragment_project,container,false);
+        model=ViewModelProviders.of(Objects.requireNonNull(getActivity())).get(ProjectViewModel.class);
 
-        return super.onCreateView(inflater, container, savedInstanceState);
+
+        return view;
     }
 
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        recycleAdapter.disconect();
+    }
 }
