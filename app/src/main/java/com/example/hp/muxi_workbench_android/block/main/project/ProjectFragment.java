@@ -12,12 +12,15 @@ import com.example.hp.muxi_workbench_android.R;
 
 import java.util.Objects;
 
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ProjectFragment extends Fragment {
 
-    private ProjectViewModel model;
+    private  ProjectViewModel model;
     private ProjectRecycleAdapter recycleAdapter;
+    private RecyclerView recyclerView;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,14 +32,37 @@ public class ProjectFragment extends Fragment {
 
         View view=inflater.inflate(R.layout.fragment_project,container,false);
         model=ViewModelProviders.of(Objects.requireNonNull(getActivity())).get(ProjectViewModel.class);
+        recyclerView=view.findViewById(R.id.project_recycle);
+        recycleAdapter=new ProjectRecycleAdapter((v,position)->{
 
+            //todo
+        });
 
+        subscribeToModel(model);
         return view;
     }
+
+    private void onItemClik(View v,int p){
+
+
+    }
+
+    private void subscribeToModel(ProjectViewModel model){
+        model.getProjectData().observe(this,listBean -> {
+              recycleAdapter.setData(listBean.getList());
+
+        });
+
+
+    }
+
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         recycleAdapter.disconect();
     }
+
+
+
 }
