@@ -33,6 +33,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private ImageView mine;
     private ArrayList<Fragment> fragments = new ArrayList<>();
     private FragmentPagerAdapter pagerAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
