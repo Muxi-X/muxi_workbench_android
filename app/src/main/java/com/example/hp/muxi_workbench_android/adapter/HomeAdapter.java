@@ -1,4 +1,4 @@
-package com.example.hp.muxi_workbench_android.block.main.home;
+package com.example.hp.muxi_workbench_android.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.hp.muxi_workbench_android.R;
 
-class HomeAdapter extends RecyclerView.Adapter {
+public class HomeAdapter extends RecyclerView.Adapter {
 
     private static final int TYPE_DIVISION = 1;
     private static final int TYPE_STATE = 2;

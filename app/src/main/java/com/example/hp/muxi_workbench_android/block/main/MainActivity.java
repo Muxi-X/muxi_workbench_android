@@ -1,5 +1,6 @@
 package com.example.hp.muxi_workbench_android.block.main;
 
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -10,6 +11,8 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hp.muxi_workbench_android.R;
+import com.example.hp.muxi_workbench_android.adapter.MainPagerAdapter;
+import com.example.hp.muxi_workbench_android.base.BaseActivity;
 import com.example.hp.muxi_workbench_android.block.main.home.HomeFragment;
 import com.example.hp.muxi_workbench_android.block.main.message.MessageFragment;
 import com.example.hp.muxi_workbench_android.block.main.mine.MineFragment;
@@ -17,10 +20,11 @@ import com.example.hp.muxi_workbench_android.block.main.project.ProjectFragment;
 import com.example.hp.muxi_workbench_android.block.main.schedule.ScheduleFragment;
 
 import java.util.ArrayList;
-
 import androidx.lifecycle.ViewModelProviders;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
+
+
     private ViewPager viewPager;
     private ImageView home;
     private ImageView schedule;
@@ -29,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView mine;
     private ArrayList<Fragment> fragments = new ArrayList<>();
     private FragmentPagerAdapter pagerAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fragments.add(new ProjectFragment());
         fragments.add(new MessageFragment());
         fragments.add(new MineFragment());
-        pagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager(),fragments);
+        pagerAdapter = new MainPagerAdapter(getSupportFragmentManager(),fragments);
         viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
