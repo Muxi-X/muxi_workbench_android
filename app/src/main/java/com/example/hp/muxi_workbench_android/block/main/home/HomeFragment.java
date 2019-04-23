@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.example.hp.muxi_workbench_android.R;
+import com.example.hp.muxi_workbench_android.adapter.HomeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private ViewFlipper viewFlipper;
-    private RecyclerView recyclerView;
+    private RecyclerView mRecyclerView;
     private List<String> messageArray;
 
     @Nullable
@@ -42,9 +43,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void initRecyclerView(View root) {
-        recyclerView = root.findViewById(R.id.home_recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(new HomeAdapter());
+        mRecyclerView = root.findViewById(R.id.home_recycle);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mRecyclerView.setAdapter(new HomeAdapter());
     }
 
     private void initViewFlipper(View root) {

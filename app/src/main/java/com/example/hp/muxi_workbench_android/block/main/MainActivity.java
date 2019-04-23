@@ -3,13 +3,13 @@ package com.example.hp.muxi_workbench_android.block.main;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.example.hp.muxi_workbench_android.R;
+import com.example.hp.muxi_workbench_android.adapter.MainPagerAdapter;
+import com.example.hp.muxi_workbench_android.base.BaseActivity;
 import com.example.hp.muxi_workbench_android.block.main.home.HomeFragment;
 import com.example.hp.muxi_workbench_android.block.main.message.MessageFragment;
 import com.example.hp.muxi_workbench_android.block.main.mine.MineFragment;
@@ -18,7 +18,7 @@ import com.example.hp.muxi_workbench_android.block.main.schedule.ScheduleFragmen
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
     private ViewPager viewPager;
     private ImageView home;
     private ImageView schedule;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fragments.add(new ProjectFragment());
         fragments.add(new MessageFragment());
         fragments.add(new MineFragment());
-        pagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager(),fragments);
+        pagerAdapter = new MainPagerAdapter(getSupportFragmentManager(),fragments);
         viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

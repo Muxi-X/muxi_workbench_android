@@ -1,4 +1,4 @@
-package com.example.hp.muxi_workbench_android.block.main;
+package com.example.hp.muxi_workbench_android.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -6,10 +6,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
 
-class MainViewPagerAdapter extends FragmentPagerAdapter {
+public class MainPagerAdapter extends FragmentPagerAdapter {
     private final ArrayList<Fragment> list;
 
-    public MainViewPagerAdapter(FragmentManager fm, ArrayList<Fragment> list) {
+    public MainPagerAdapter(FragmentManager fm, ArrayList<Fragment> list) {
         super(fm);
         this.list = list;
     }
