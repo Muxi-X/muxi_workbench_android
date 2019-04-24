@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
 
     <HorizontalScrollView
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/black"
@@ -59,6 +59,50 @@
                 android:layout_margin="5dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/italic"
+                />
+
+            <ImageButton
+                android:id="@+id/action_insert_bullets"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:layout_margin="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/bullets"
+                />
+
+            <ImageButton
+                android:id="@+id/action_insert_numbers"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:layout_margin="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/numbers"
+                />
+
+            <ImageButton
+                android:id="@+id/action_insert_image"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:layout_margin="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/insert_image"
+                />
+
+            <ImageButton
+                android:id="@+id/action_insert_link"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:layout_margin="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/insert_link"
                 />
 
             <ImageButton
@@ -176,7 +220,7 @@
                 android:layout_height="36dp"
                 android:background="@null"
                 android:contentDescription="@null"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/txt_color"
                 />
@@ -187,7 +231,7 @@
                 android:layout_height="36dp"
                 android:background="@null"
                 android:contentDescription="@null"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/bg_color"
                 />
@@ -199,7 +243,7 @@
                 android:layout_height="36dp"
                 android:background="@null"
                 android:contentDescription="@null"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/indent"
                 />
@@ -210,7 +254,7 @@
                 android:layout_height="36dp"
                 android:background="@null"
                 android:contentDescription="@null"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/outdent"
                 />
@@ -221,6 +265,8 @@
                 android:layout_height="36dp"
                 android:background="@null"
                 android:contentDescription="@null"
+                android:layout_margin="5dp"
+                android:scaleType="centerInside"
                 android:src="@drawable/justify_left"
                 />
 
@@ -230,7 +276,7 @@
                 android:layout_height="36dp"
                 android:background="@null"
                 android:contentDescription="@null"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/justify_center"
                 />
@@ -241,31 +287,9 @@
                 android:layout_height="36dp"
                 android:background="@null"
                 android:contentDescription="@null"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/justify_right"
-                />
-
-            <ImageButton
-                android:id="@+id/action_insert_bullets"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="@null"
-                android:contentDescription="@null"
-                android:layout_margin="10dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/bullets"
-                />
-
-            <ImageButton
-                android:id="@+id/action_insert_numbers"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="@null"
-                android:contentDescription="@null"
-                android:layout_margin="10dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/numbers"
                 />
 
             <ImageButton
@@ -274,31 +298,9 @@
                 android:layout_height="36dp"
                 android:background="@null"
                 android:contentDescription="@null"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/blockquote"
-                />
-
-            <ImageButton
-                android:id="@+id/action_insert_image"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="@null"
-                android:contentDescription="@null"
-                android:layout_margin="10dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/insert_image"
-                />
-
-            <ImageButton
-                android:id="@+id/action_insert_link"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="@null"
-                android:contentDescription="@null"
-                android:layout_margin="10dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/insert_link"
                 />
 
             <ImageButton
@@ -307,7 +309,7 @@
                 android:layout_height="36dp"
                 android:background="@null"
                 android:contentDescription="@null"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:scaleType="centerInside"
                 android:src="@android:drawable/checkbox_on_background"
                 />
@@ -315,25 +317,35 @@
         </LinearLayout>
     </HorizontalScrollView>
 
+    <RelativeLayout
+        android:id="@+id/bar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/post_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="发送"
+            android:textSize="25sp"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"/>
+
+    </RelativeLayout>
+
     <jp.wasabeef.richeditor.RichEditor
+        android:layout_below="@+id/bar_rl"
         android:id="@+id/editor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="HTML Preview"
-        android:textSize="12sp"
-        />
-
-    <TextView
+        android:layout_below="@+id/editor"
         android:id="@+id/preview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:paddingTop="10dp"
         />
 
-</LinearLayout>
+</RelativeLayout>

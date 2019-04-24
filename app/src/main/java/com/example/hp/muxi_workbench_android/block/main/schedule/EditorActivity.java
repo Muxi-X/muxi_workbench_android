@@ -17,6 +17,7 @@ public class EditorActivity extends BaseActivity {
 
     private RichEditor mEditor;
     private TextView mPreview;
+    private TextView mPostTv;
 
     public static void startEditorActivity(Context context){
         Intent intent = new Intent(context,EditorActivity.class);
@@ -48,6 +49,14 @@ public class EditorActivity extends BaseActivity {
         mEditor.setOnTextChangeListener(new RichEditor.OnTextChangeListener() {
             @Override public void onTextChange(String text) {
                 mPreview.setText(text);
+            }
+        });
+
+        mPostTv = findViewById(R.id.post_tv);
+        mPostTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                post(mPreview.getText().toString());
             }
         });
 
@@ -218,5 +227,9 @@ public class EditorActivity extends BaseActivity {
                 mEditor.insertTodo();
             }
         });
+    }
+
+    private void post(String s) {
+        
     }
 }
