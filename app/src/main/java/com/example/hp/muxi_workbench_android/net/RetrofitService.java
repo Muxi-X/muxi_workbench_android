@@ -1,6 +1,7 @@
 package com.example.hp.muxi_workbench_android.net;
 
 import com.example.hp.muxi_workbench_android.net.bean.FeedList;
+import com.example.hp.muxi_workbench_android.net.bean.ScheduleInfo;
 import com.example.hp.muxi_workbench_android.net.bean.ScheduleList;
 
 
@@ -16,6 +17,9 @@ public interface RetrofitService {
     @GET("feed/list/{page}")
     Observable<FeedList> getFeedList(@Path("page")int page);
 
-    @GET("/status/list/{page}")
-    Observable<ScheduleList> getScheduelList(@Header("token")String token, @Path("page")int page);
+    @GET("status/list/{page}")
+    Observable<ScheduleList> getScheduleList(@Header("token")String token, @Path("page")int page);
+
+    @GET("status/{sid}")
+    Observable<ScheduleInfo> getScheduleInfo(@Header("token")String token, @Path("sid")int sid);
 }

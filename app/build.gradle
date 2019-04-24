@@ -44,4 +44,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation "androidx.annotation:annotation:1.0.0"
 
+    //富文本编辑器
+    implementation 'jp.wasabeef:richeditor-android:1.2.2'
+
+
 }

@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hp.muxi_workbench_android.R;
+import com.example.hp.muxi_workbench_android.block.main.schedule.ScheduleActivity;
 import com.example.hp.muxi_workbench_android.net.bean.ScheduleList;
 
 import java.util.List;
@@ -70,7 +71,16 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
         }
 
         public void bind(ScheduleList.StatuListBean o) {
+            mContentTv.setText(o.getContent());
+            mNameTv.setText(o.getUsername());
+            mDateTv.setText(o.getTime());
 
+            mContentTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ScheduleActivity.startScheduleActivity(mContentTv.getContext(),o.getSid());
+                }
+            });
         }
     }
 }

@@ -14,6 +14,7 @@ import android.widget.ViewFlipper;
 
 import com.example.hp.muxi_workbench_android.R;
 import com.example.hp.muxi_workbench_android.adapter.HomeAdapter;
+import com.example.hp.muxi_workbench_android.block.main.schedule.EditorActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +56,12 @@ public class HomeFragment extends Fragment {
             textView.setText(messageArray.get(i));
             viewFlipper.addView(textView);
         }
+        viewFlipper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditorActivity.startEditorActivity(getContext());
+            }
+        });
     }
 
     @Override

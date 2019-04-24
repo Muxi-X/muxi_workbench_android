@@ -24,6 +24,8 @@
         </activity>
 
         <activity android:name=".block.login.LoginActivity"/>
+        <activity android:name=".block.main.schedule.ScheduleActivity"/>
+        <activity android:name=".block.main.schedule.EditorActivity"/>
     </application>
 
 </manifest>
