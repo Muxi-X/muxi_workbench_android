@@ -4,12 +4,15 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.hp.muxi_workbench_android.base.BaseFragment;
+
 import java.util.ArrayList;
+import java.util.List;
 
-public class MainPagerAdapter extends FragmentPagerAdapter {
-    private final ArrayList<Fragment> list;
+public class MainPagerAdapter<E extends Fragment> extends FragmentPagerAdapter {
+    private final List<E> list;
 
-    public MainPagerAdapter(FragmentManager fm, ArrayList<Fragment> list) {
+    public MainPagerAdapter(FragmentManager fm, List<E> list) {
         super(fm);
         this.list = list;
     }
@@ -23,4 +26,8 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return list.size();
     }
+
+
+
+
 }

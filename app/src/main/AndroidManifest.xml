@@ -24,6 +24,7 @@
         </activity>
 
         <activity android:name=".block.login.LoginActivity"/>
+        <activity android:name=".block.main.project.ProjectItemActivity" />
     </application>
 
 </manifest>

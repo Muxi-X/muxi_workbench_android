@@ -9,16 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.hp.muxi_workbench_android.R;
+import com.example.hp.muxi_workbench_android.block.main.project.Viewdel.ProjectViewModel;
 
 import java.util.Objects;
 
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ProjectFragment extends Fragment {
 
-    private  ProjectViewModel model;
+    private ProjectViewModel model;
     private ProjectRecycleAdapter recycleAdapter;
     private RecyclerView recyclerView;
     @Override
