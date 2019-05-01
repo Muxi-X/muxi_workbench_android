@@ -45,4 +45,8 @@ dependencies {
     implementation "androidx.annotation:annotation:1.0.0"
     implementation "com.google.android.material:material:1.0.0-rc01"
 
+    //富文本编辑器
+    implementation 'jp.wasabeef:richeditor-android:1.2.2'
+
+
 }
