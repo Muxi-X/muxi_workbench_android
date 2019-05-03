@@ -230,6 +230,6 @@ public class EditorActivity extends BaseActivity {
     }
 
     private void post(String s) {
-        
+
     }
 }

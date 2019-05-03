@@ -5,7 +5,8 @@
     >
 
     <HorizontalScrollView
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/bar_rl"
+        android:id="@+id/horizontal_sv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/black"
@@ -326,6 +327,7 @@
             android:id="@+id/post_tv"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
             android:text="发送"
             android:textSize="25sp"
             android:layout_alignParentEnd="true"
@@ -334,7 +336,7 @@
     </RelativeLayout>
 
     <jp.wasabeef.richeditor.RichEditor
-        android:layout_below="@+id/bar_rl"
+        android:layout_below="@+id/horizontal_sv"
         android:id="@+id/editor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
