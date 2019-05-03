@@ -61,24 +61,24 @@ public class FeedList {
     public static class DataListBean {
         /**
          * user : [{"name":"string","id":0,"avatar_url":"string"}]
-         * acton : string
+         * action : string
          * source : [{"kind_id":0,"object_id":0,"project_id":0,"name":"string"}]
          * time : string
          * split : true
          */
 
-        private String acton;
+        private String action;
         private String time;
         private boolean split;
         private List<UserBean> user;
         private List<SourceBean> source;
 
-        public String getActon() {
-            return acton;
+        public String getAction() {
+            return action;
         }
 
-        public void setActon(String acton) {
-            this.acton = acton;
+        public void setAction(String action) {
+            this.action = action;
         }
 
         public String getTime() {

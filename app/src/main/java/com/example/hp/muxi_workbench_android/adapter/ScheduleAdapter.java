@@ -1,9 +1,11 @@
 package com.example.hp.muxi_workbench_android.adapter;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import com.example.hp.muxi_workbench_android.R;
@@ -81,6 +83,28 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
                     ScheduleActivity.startScheduleActivity(mContentTv.getContext(),o.getSid());
                 }
             });
+
+            mPullIv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showPopupMenu(v);
+                }
+            });
         }
     }
+
+    private void showPopupMenu(View view){
+        PopupMenu popupMenu = new PopupMenu(view.getContext(),view);
+        popupMenu.getMenuInflater().inflate(R.menu.schedule_menu,popupMenu.getMenu());
+        popupMenu.show();
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                return false;
+            }
+        });
+        popupMenu.getMenu().findItem(R.id.stick_cancer).setVisible(false);
+        //控制不同item是否显示
+    }
+
 }

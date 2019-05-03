@@ -15,7 +15,7 @@ import rx.Observable;
 
 public interface RetrofitService {
     @GET("feed/list/{page}")
-    Observable<FeedList> getFeedList(@Path("page")int page);
+    Observable<FeedList> getFeedList(@Header("token")String token, @Path("page")int page);
 
     @GET("status/list/{page}")
     Observable<ScheduleList> getScheduleList(@Header("token")String token, @Path("page")int page);

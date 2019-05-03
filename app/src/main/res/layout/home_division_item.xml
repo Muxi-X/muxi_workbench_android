@@ -5,7 +5,7 @@
     android:layout_height="55dp">
 
     <TextView
-        android:id="@+id/date_text"
+        android:id="@+id/date_tv"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginTop="-10dp"
@@ -17,7 +17,7 @@
         android:background="@drawable/circle_background"/>
 
     <TextView
-        android:id="@+id/project_text"
+        android:id="@+id/project_tv"
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_alignParentEnd="true"
