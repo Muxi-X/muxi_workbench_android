@@ -48,7 +48,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         fragments.add(new ProjectFragment());
         fragments.add(new MessageFragment());
         fragments.add(new MineFragment());
-        pagerAdapter = new MainPagerAdapter(getSupportFragmentManager(),fragments);
+        pagerAdapter = new MainPagerAdapter<Fragment>(getSupportFragmentManager(),fragments);
         viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

@@ -18,6 +18,7 @@ public class WorkbenchRetrofit {
                 .writeTimeout(25,TimeUnit.SECONDS)
                 .build();
 
+        // FIXME: 19-5-1 @赵弟发  异常 java.lang.IllegalArgumentException: baseUrl must end in /: https://work.muxixyz.com/api/v1.0
         Retrofit retrofit = new Retrofit.Builder()
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())

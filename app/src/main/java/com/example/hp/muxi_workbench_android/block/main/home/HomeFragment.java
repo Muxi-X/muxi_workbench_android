@@ -44,7 +44,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void initRecyclerView(View root) {
-        mRecyclerView = root.findViewById(R.id.home_recycle);
+        mRecyclerView = root.findViewById(R.id.home_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mRecyclerView.setAdapter(new HomeAdapter());
     }
