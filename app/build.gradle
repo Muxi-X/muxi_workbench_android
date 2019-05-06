@@ -47,6 +47,9 @@ dependencies {
 
     //富文本编辑器
     implementation 'jp.wasabeef:richeditor-android:1.2.2'
+    //圆形头像
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
 
 
 }

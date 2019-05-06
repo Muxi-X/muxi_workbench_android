@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.hp.muxi_workbench_android.R;
 import com.example.hp.muxi_workbench_android.net.bean.ScheduleInfo;
 
@@ -59,6 +60,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
             mContentTv.setText(commentListBean.getContent());
             mNameTv.setText(commentListBean.getUsername());
             mDateTv.setText(commentListBean.getTime());
+            Glide.with(mCircleIv.getContext()).load(commentListBean.getAvatar()).into(mCircleIv);
         }
     }
 }

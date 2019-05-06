@@ -4,45 +4,30 @@ import java.util.List;
 
 public class ScheduleInfo {
 
+
     /**
-     * sid : 0
-     * title : string
-     * author_id : 0
-     * content : string
-     * time : string
-     * likeCount : 0
-     * iflike : true
-     * userID : 0
-     * username : string
-     * commentList : [{"cid":0,"username":"string","avatar":"string","time":"string","content":"string"}]
+     * author_id : 3
+     * commentList : [{"avatar":"http://ossworkbench.muxixyz.com/1552868798.6947563.TIM20190318082620.jpg","cid":1,"content":"请吃饭","time":"2019-03-16 15:30:35","username":"Summer"},{"avatar":"http://ossworkbench.muxixyz.com/t.jpg1552724200.820682","cid":2,"content":"请吃饭","time":"2019-03-16 15:30:47","username":"Darren"},{"avatar":"http://ossworkbench.muxixyz.com/1552730712.1079993.group-product.png","cid":3,"content":"牛逼????","time":"2019-03-16 17:07:01","username":"赵鑫晖"},{"avatar":"http://ossworkbench.muxixyz.com/img.png1552721356.9483771","cid":12,"content":"我请我自己吃饭","time":"2019-03-18 18:47:52","username":"今天豆豆写代码了嘛w"}]
+     * content : <p>哈哈哈哈终于上线了！！！！！</p>
+     * iflike : 0
+     * likeCount : 3
+     * sid : 1
+     * time : 2019/03/16 15:29:43
+     * title : 工作台的第一条进度
+     * userID : 43
+     * username : 赵弟发
      */
 
-    private int sid;
-    private String title;
     private int author_id;
     private String content;
-    private String time;
+    private int iflike;
     private int likeCount;
-    private boolean iflike;
+    private int sid;
+    private String time;
+    private String title;
     private int userID;
     private String username;
     private List<CommentListBean> commentList;
-
-    public int getSid() {
-        return sid;
-    }
-
-    public void setSid(int sid) {
-        this.sid = sid;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public int getAuthor_id() {
         return author_id;
@@ -60,12 +45,12 @@ public class ScheduleInfo {
         this.content = content;
     }
 
-    public String getTime() {
-        return time;
+    public int getIflike() {
+        return iflike;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setIflike(int iflike) {
+        this.iflike = iflike;
     }
 
     public int getLikeCount() {
@@ -76,12 +61,28 @@ public class ScheduleInfo {
         this.likeCount = likeCount;
     }
 
-    public boolean isIflike() {
-        return iflike;
+    public int getSid() {
+        return sid;
     }
 
-    public void setIflike(boolean iflike) {
-        this.iflike = iflike;
+    public void setSid(int sid) {
+        this.sid = sid;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public int getUserID() {
@@ -110,18 +111,26 @@ public class ScheduleInfo {
 
     public static class CommentListBean {
         /**
-         * cid : 0
-         * username : string
-         * avatar : string
-         * time : string
-         * content : string
+         * avatar : http://ossworkbench.muxixyz.com/1552868798.6947563.TIM20190318082620.jpg
+         * cid : 1
+         * content : 请吃饭
+         * time : 2019-03-16 15:30:35
+         * username : Summer
          */
 
-        private int cid;
-        private String username;
         private String avatar;
-        private String time;
+        private int cid;
         private String content;
+        private String time;
+        private String username;
+
+        public String getAvatar() {
+            return avatar;
+        }
+
+        public void setAvatar(String avatar) {
+            this.avatar = avatar;
+        }
 
         public int getCid() {
             return cid;
@@ -131,20 +140,12 @@ public class ScheduleInfo {
             this.cid = cid;
         }
 
-        public String getUsername() {
-            return username;
+        public String getContent() {
+            return content;
         }
 
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getAvatar() {
-            return avatar;
-        }
-
-        public void setAvatar(String avatar) {
-            this.avatar = avatar;
+        public void setContent(String content) {
+            this.content = content;
         }
 
         public String getTime() {
@@ -155,12 +156,12 @@ public class ScheduleInfo {
             this.time = time;
         }
 
-        public String getContent() {
-            return content;
+        public String getUsername() {
+            return username;
         }
 
-        public void setContent(String content) {
-            this.content = content;
+        public void setUsername(String username) {
+            this.username = username;
         }
     }
 }

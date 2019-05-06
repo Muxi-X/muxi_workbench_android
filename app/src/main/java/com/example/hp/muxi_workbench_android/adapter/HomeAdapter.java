@@ -8,35 +8,37 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.hp.muxi_workbench_android.R;
-import com.example.hp.muxi_workbench_android.net.bean.FeedAdapterList;
 import com.example.hp.muxi_workbench_android.net.bean.FeedList;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomeAdapter extends RecyclerView.Adapter {
 
     private static final int TYPE_DIVISION = 1;
     private static final int TYPE_STATE = 2;
-    private FeedAdapterList list;
+    private List<FeedList.DataListBean> list = new ArrayList<>();
 
     public HomeAdapter(List<FeedList.DataListBean> beans){
-        list = new FeedAdapterList();
+        String time = "";
         for (int i = 0; i < beans.size(); i++) {
-            FeedList.DataListBean.UserBean userBean = new FeedList.DataListBean.UserBean();
-            FeedList.DataListBean.SourceBean sourceBean = new FeedList.DataListBean.SourceBean();
-            userBean.setId(-1);
-            userBean.setName(beans.get(i).getTime());
-            list.getUserBeans().add(userBean);
-            list.getSourceBeans().add(sourceBean);
-            // 把时间当做普通item插入
-            list.getUserBeans().addAll(beans.get(i).getUser());
-            list.getSourceBeans().addAll(beans.get(i).getSource());
+            if(!beans.get(i).getTimeday().equals(time)){
+                time = beans.get(i).getTimeday();
+                FeedList.DataListBean.UserBean userBean = new FeedList.DataListBean.UserBean();
+                userBean.setId(-1);
+                userBean.setName(beans.get(i).getTimeday());
+                FeedList.DataListBean dataListBean = new FeedList.DataListBean();
+                dataListBean.setUser(userBean);
+                list.add(dataListBean);
+            }
+            list.add(beans.get(i));
+
         }
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (list.getUserBeans().get(position).getId() == -1)return TYPE_DIVISION;
+        if (list.get(position).getUser().getId() == -1)return TYPE_DIVISION;
         else return TYPE_STATE;
     }
 
@@ -56,15 +58,15 @@ public class HomeAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         if(viewHolder instanceof DivisionHolder){
-            ((DivisionHolder)viewHolder).bind(list.getUserBeans().get(i).getName());
+            ((DivisionHolder)viewHolder).bind(list.get(i).getUser().getName());
         }else if (viewHolder instanceof StateHolder){
-            ((StateHolder)viewHolder).bind(list.getUserBeans().get(i),list.getSourceBeans().get(i));
+            ((StateHolder)viewHolder).bind(list.get(i).getUser(),list.get(i).getSource(),list.get(i).getAction());
         }
     }
 
     @Override
     public int getItemCount() {
-        return list.getUserBeans().size();
+        return list.size();
     }
 
     class DivisionHolder extends RecyclerView.ViewHolder {
@@ -91,12 +93,15 @@ public class HomeAdapter extends RecyclerView.Adapter {
 
         public StateHolder(@NonNull View itemView) {
             super(itemView);
+            nameTv = itemView.findViewById(R.id.name_tv);
+            actionTv = itemView.findViewById(R.id.action_tv);
+            projectTv = itemView.findViewById(R.id.project_tv);
         }
 
-        public void bind(FeedList.DataListBean.UserBean userBean, FeedList.DataListBean.SourceBean sourceBean){
+        public void bind(FeedList.DataListBean.UserBean userBean, FeedList.DataListBean.SourceBean sourceBean,String action){
             nameTv.setText(userBean.getName());
-            //actionTv.setText(sourceBean.getKind_id());
-            projectTv.setText(sourceBean.getName());
+            actionTv.setText(action);
+            projectTv.setText(sourceBean.getObject_name());
         }
     }
 }

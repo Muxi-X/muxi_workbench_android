@@ -6,12 +6,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.example.hp.muxi_workbench_android.App;
 import com.example.hp.muxi_workbench_android.R;
 import com.example.hp.muxi_workbench_android.adapter.HomeAdapter;
 import com.example.hp.muxi_workbench_android.block.main.schedule.EditorActivity;
@@ -22,8 +25,10 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
-import rx.Observer;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 
 public class HomeFragment extends Fragment {
@@ -44,20 +49,32 @@ public class HomeFragment extends Fragment {
     }
 
     private void initData() {
-        RetrofitFactory.getRetrofitService().getFeedList("token",1)
+        RetrofitFactory.getRetrofitService().getFeedList(App.getToken(),1)
                 .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.immediate())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<FeedList>() {
+
                     @Override
-                    public void onCompleted() { }
-                    @Override
-                    public void onError(Throwable e) { }
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
                     @Override
                     public void onNext(FeedList feedList) {
                         list.clear();
                         list.addAll(feedList.getDataList());
-                        if(mRecyclerView.getAdapter() == null) initRecyclerView();
+                        if(mRecyclerView.getAdapter() == null)initRecyclerView();
                         else mRecyclerView.getAdapter().notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
                     }
                 });
 
@@ -77,7 +94,7 @@ public class HomeFragment extends Fragment {
             textView.setText(messageArray.get(i));
             viewFlipper.addView(textView);
         }
-        viewFlipper.setOnClickListener(v -> EditorActivity.startEditorActivity(getContext()));
+        viewFlipper.setOnClickListener(v -> EditorActivity.startEditorActivity(getContext(),EditorActivity.FLAG_EDIT,"",""));
     }
 
     @Override

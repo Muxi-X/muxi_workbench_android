@@ -4,6 +4,7 @@ import android.app.Application;
 
 public class App extends Application {
     private static App instance;
+    private static String token;
 
     @Override
     public void onCreate() {
@@ -13,5 +14,13 @@ public class App extends Application {
 
     public static App getInstance(){
         return instance;
+    }
+
+    public static String getToken(){
+        return token;
+    }
+
+    public static void setToken(String to){
+        token = to;
     }
 }

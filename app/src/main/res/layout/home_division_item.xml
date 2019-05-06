@@ -25,8 +25,8 @@
         android:text="XX项目"/>
 
     <View
-        android:layout_toEndOf="@id/date_text"
-        android:layout_toStartOf="@id/project_text"
+        android:layout_toEndOf="@id/date_tv"
+        android:layout_toStartOf="@id/project_tv"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginTop="25dp"

@@ -19,8 +19,22 @@ public class EditorActivity extends BaseActivity {
     private TextView mPreview;
     private TextView mPostTv;
 
-    public static void startEditorActivity(Context context){
+    public static final int FLAG_EDIT = 0;
+    public static final int FLAG_COMMENT = 1;
+
+    private static final String FLAG_KEY = "flag";
+    private static final String SID_KEY = "sid";
+    private static final String CONTENT_KEY = "content";
+
+    private int flag;
+    private String sid;
+    private String content;
+
+    public static void startEditorActivity(Context context, int flag, String sid, String content){
         Intent intent = new Intent(context,EditorActivity.class);
+        intent.putExtra(FLAG_KEY,flag);
+        intent.putExtra(SID_KEY,sid);
+        intent.putExtra(CONTENT_KEY,content);
         context.startActivity(intent);
     }
 
@@ -29,6 +43,17 @@ public class EditorActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
         initView();
+        initData();
+    }
+
+    private void initData() {
+        flag = getIntent().getIntExtra(FLAG_KEY,0);
+        sid = getIntent().getStringExtra(SID_KEY);
+        if(flag == FLAG_EDIT){
+            content = getIntent().getStringExtra(CONTENT_KEY);
+            mEditor.setHtml(content);
+        }
+
     }
 
     private void initView() {

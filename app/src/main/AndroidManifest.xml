@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-
     package="com.example.hp.muxi_workbench_android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:name=".App"
@@ -15,7 +17,7 @@
         android:appComponentFactory="wpy"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".block.main.MainActivity">
+        <activity android:name=".block.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +25,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".block.login.LoginActivity"/>
+        <activity android:name=".block.main.MainActivity"/>
         <activity android:name=".block.main.project.ProjectItemActivity" />
         <activity android:name=".block.main.schedule.ScheduleActivity"/>
         <activity android:name=".block.main.schedule.EditorActivity"/>

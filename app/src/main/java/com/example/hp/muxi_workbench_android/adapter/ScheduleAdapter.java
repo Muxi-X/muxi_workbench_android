@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.hp.muxi_workbench_android.R;
 import com.example.hp.muxi_workbench_android.block.main.schedule.ScheduleActivity;
 import com.example.hp.muxi_workbench_android.net.bean.ScheduleList;
@@ -77,10 +78,12 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
             mNameTv.setText(o.getUsername());
             mDateTv.setText(o.getTime());
 
+            Glide.with(mCircleIv.getContext()).load(o.getAvatar()).into(mCircleIv);
+
             mContentTv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ScheduleActivity.startScheduleActivity(mContentTv.getContext(),o.getSid());
+                    ScheduleActivity.startScheduleActivity(mContentTv.getContext(),o.getSid(),o.getUsername(),o.getAvatar());
                 }
             });
 
